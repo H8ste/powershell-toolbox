@@ -12,7 +12,35 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "all": true,
+      "shell": {
+        "all": true,
+        "execute": true,
+        "open": true,
+        "scope": [
+          {
+            "name": "sh",
+            "cmd": "sh",
+            "args": ["-c", { "validator": "\\S+" }]
+          },
+          {
+            "name": "cmd",
+            "cmd": "cmd",
+            "args": ["/C", { "validator": "\\S+" }]
+          },
+          {
+            "name": "powershell",
+            "cmd": "powershell",
+            "args": ["/C", { "validator": "\\S+" }]
+          },
+          {
+            "name": "pwsh",
+            "cmd": "pwsh",
+            "args": ["/C", { "validator": "\\S+" }]
+          }
+        ]
+        
+      }
     },
     "bundle": {
       "active": true,
